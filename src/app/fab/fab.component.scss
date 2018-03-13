@@ -5,16 +5,15 @@
 
 .bubble {
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &-parent {
     position: relative;
     background-color: #fff;
     width: 75px;
     height: 75px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   &-child {

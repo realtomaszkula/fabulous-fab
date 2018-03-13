@@ -55,6 +55,11 @@ const children = {
 const transform = animation([
   animate(timing, style({ transform: 'translate({{x}}, {{y}}' })),
 ]);
+const fadeIn = animation([
+  style({ opacity: 0 }),
+  animate(timing, style({ opacity: 1 })),
+]);
+const fadeOut = animation([animate(timing, style({ opacity: 0 }))]);
 // endregion
 
 // region animations
@@ -80,6 +85,13 @@ export const parentAnimation = trigger('parent', [
   ]),
 ]);
 
+export const iconAnimation = trigger('icon', [
+  state('off', style({ opacity: 0 })),
+  state('on', style({ opacity: 1 })),
+  transition('off => on', [useAnimation(fadeIn)]),
+  transition('on => off', [useAnimation(fadeOut)]),
+]);
+
 export const childAnimation1 = trigger('child1', [
   state(
     'off',
@@ -93,18 +105,16 @@ export const childAnimation1 = trigger('child1', [
       transform: `translate(${children.child1.x}, ${children.child1.y})`,
     }),
   ),
-  transition(
-    'off => on',
+  transition('off => on', [
     useAnimation(transform, {
       params: children.child1,
     }),
-  ),
-  transition(
-    'on => off',
+  ]),
+  transition('on => off', [
     useAnimation(transform, {
       params: baseTranslate,
     }),
-  ),
+  ]),
 ]);
 
 export const childAnimation2 = trigger('child2', [

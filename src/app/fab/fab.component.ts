@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  iconAnimation,
   parentAnimation,
   crossAnimation,
   childAnimation1,
@@ -19,12 +20,24 @@ enum BubbleState {
   selector: 'zet-fab',
   template: `
   <div class="bubble bubble-parent" [@parent]="bubbleState" (click)="toggle()">
-    <div class="bubble bubble-child" [@child1]="bubbleState"></div>
-    <div class="bubble bubble-child" [@child2]="bubbleState"></div>
-    <div class="bubble bubble-child" [@child3]="bubbleState"></div>
-    <div class="bubble bubble-child" [@child4]="bubbleState"></div>
-    <div class="bubble bubble-child" [@child5]="bubbleState"></div>
-    <div class="bubble bubble-child" [@child6]="bubbleState"></div>
+    <div class="bubble bubble-child" [@child1]="bubbleState">
+      <i class="material-icons" [@icon]="bubbleState">create</i>
+    </div>
+    <div class="bubble bubble-child" [@child2]="bubbleState">
+      <i class="material-icons" [@icon]="bubbleState">delete</i>
+    </div>
+    <div class="bubble bubble-child" [@child3]="bubbleState">
+      <i class="material-icons" [@icon]="bubbleState">edit</i>
+    </div>
+    <div class="bubble bubble-child" [@child4]="bubbleState">
+      <i class="material-icons" [@icon]="bubbleState">done</i>
+    </div>
+    <div class="bubble bubble-child" [@child5]="bubbleState">
+      <i class="material-icons" [@icon]="bubbleState">favorite</i>
+    </div>
+    <div class="bubble bubble-child" [@child6]="bubbleState">
+      <i class="material-icons" [@icon]="bubbleState">build</i>
+    </div>
     <div class="bubble-cross" [@cross]="bubbleState">❌</div>
   </div>
   `,
@@ -38,6 +51,7 @@ enum BubbleState {
     childAnimation4,
     childAnimation5,
     childAnimation6,
+    iconAnimation,
   ],
 })
 export class FabComponent implements OnInit {
