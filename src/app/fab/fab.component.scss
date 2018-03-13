@@ -25,35 +25,5 @@
     background-color: #fff;
     width: 50px;
     height: 50px;
-
-    // @mixin translate-centered($x: 0, $y: 0) {
-    //   transform: translate(-50% + $x, -50% + $y);
-    // }
-
-    // $arch: 75%;
-    // $height: 150%;
-    // &:nth-child(1) {
-    //   @include translate-centered($x: -$height, $y: $arch);
-    // }
-
-    // &:nth-child(2) {
-    //   @include translate-centered($x: 0, $y: $height);
-    // }
-
-    // &:nth-child(3) {
-    //   @include translate-centered($x: $height, $y: $arch);
-    // }
-
-    // &:nth-child(4) {
-    //   @include translate-centered($x: $height, $y: -$arch);
-    // }
-
-    // &:nth-child(5) {
-    //   @include translate-centered($x: 0, $y: -$height);
-    // }
-
-    // &:nth-child(6) {
-    //   @include translate-centered($x: -$height, $y: -$arch);
-    // }
   }
 }
